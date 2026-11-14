@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML FORM</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        <label for="name">Nama: </label>
+        <input type="text" id="name" placeholder="John Doe" />
+      </p>
+
+      <p>
+        Jenis Kelamin:
+
+        <input type="radio" name="gender" id="male" />
+        <label for="male">Laki-Laki</label>
+        <input type="radio" name="gender" id="female" />
+        <label for="female">Perempuan</label>
+        <input type="radio" name="gender" id="gay" disabled />
+        <label for="gay">Gay</label>
+      </p>
+
+      <p>
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="johndoe@email.com" />
+      </p>
+
+      <p>
+        <label for="warna">Warna Kesukaan: </label>
+        <input type="color" id="warna" />
+      </p>
+
+      <p>
+        <label for="hbd">Tanggal Lahir: </label>
+        <input type="date" id="hbd" />
+      </p>
+
+      <p>
+        <label for="phone">Nomor HP: </label>
+        <input type="number" id="phone" placeholder="08214333990" />
+      </p>
+
+      <p>
+        <label for="agama">Agama: </label>
+        <select name="agama" id="agama">
+          <option value="Islam">Islam</option>
+          <option value="Kristen">Kristen</option>
+          <option value="Katolik">Katolik</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Buddha">Buddha</option>
+          <option value="Konghucu">Konghucu</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="alamat">Alamat Lengkap: </label>
+        <br />
+        <textarea
+          name="alamat"
+          id="alamat"
+          cols="25"
+          rows="5"
+          placeholder="Jln. Sirotol Mustakim, ...."
+        ></textarea>
+      </p>
+
+      <p>
+        Mapel yang disukai:
+        <br />
+        <input type="checkbox" id="mtk" />
+        <label for="mtk">Matematika</label>
+        <br />
+        <input type="checkbox" id="big" />
+        <label for="big">Bahasa Inggris</label>
+        <br />
+        <input type="checkbox" id="pp" />
+        <label for="pp">Pendidikan Pancasila</label>
+        <br />
+        <input type="checkbox" id="tik" />
+        <label for="tik">Informatika</label>
+        <br />
+        <input type="checkbox" id="ipas" />
+        <label for="ipas">IPAS</label>
+        <br />
+        <input type="checkbox" id="jawa" />
+        <label for="jawa">Bahasa Jawa</label>
+        <br />
+        <input type="checkbox" id="mw" />
+        <label for="mw">Chindo</label>
+      </p>
+
+      <input type="submit" name="submit" id="submit" value="Kirim" />
+      <input type="reset" name="reset" id="reset" value="Reset ke awal" />
+    </form>
+  </body>
+</html>

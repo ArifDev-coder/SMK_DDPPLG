@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anchor</title>
+    <style>
+      body {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      nav {
+        background-color: blue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1rem 0rem 1rem;
+      }
+
+      .nav-item {
+        margin-left: 2rem;
+        text-decoration: none;
+        color: #efefef;
+      }
+
+      .data-diri {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      audio {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        outline: none;
+      }
+
+      .glow {
+        color: #fff;
+        /* text-shadow: 0 0 25px white; */
+        /* -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate; */
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px white,
+            0 0 20px white,
+            0 0 25px white,
+            0 0 30px white,
+            0 0 35px white;
+        }
+
+        to {
+          text-shadow:
+            0 0 10px #fff,
+            0 0 15px #71804c,
+            0 0 20px #71804c,
+            0 0 25px #71804c,
+            0 0 30px #71804c,
+            0 0 35px #71804c,
+            0 0 40px #71804c;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h2>ArifDev</h2>
+      <div class="nav-items">
+        <a href="../index.html" class="nav-item">Halaman 1</a>
+        <a href="../page2/page2.html" class="nav-item">Halaman 2</a
+        ><a href="page3.html" class="nav-item">About Me</a>
+      </div>
+    </nav>
+
+    <div class="data-diri">
+      <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+          <th colspan="2">Data diri</th>
+        </tr>
+
+        <tr>
+          <td>NAMA</td>
+          <td>ArifDev</td>
+        </tr>
+
+        <tr>
+          <td>Kelas</td>
+          <td>X Rpl 1</td>
+        </tr>
+
+        <tr>
+          <td>ABSEN</td>
+          <td>2</td>
+        </tr>
+
+        <!-- <tr>
+          <td>GWE</td>
+          <td>
+            <video widh="100px" height="190px" loop controls>
+              <source src="WIN_20261110_08_39_43_Pro.mp4" type="video/mp4" />
+            </video>
+          </td>
+        </tr> -->
+
+        <tr>
+          <td>Lagu kesukaan</td>
+          <td style="">
+            <div
+              style="
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                background-color: #71804c;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                border-radius: 1.2rem;
+                border: 2px solid #121212;
+              "
+            >
+              <marquee behavior="" direction="">
+                <h3 class="thank-you-text" id="thankYouText">Playing Harvey Her's</h3>
+              </marquee>
+              <audio autoplay loop src="src/Harvey.mp3" controls></audio>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>hobi</td>
+          <td>
+            <img src="dodo.jfif" alt="" srcset="" />Mencari makna kenapa kita
+            hitup
+          </td>
+        </tr>
+
+        <tr>
+          <td>cita-cita</td>
+          <td style="justify-content: center; display: flex">
+            <video muted loop controls autoplay>
+              <source src="src/adadeh.mp4" type="video/mp4" />
+            </video>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with input</title>
+    <style>
+      table {
+        border-color: salmon;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+    "
+  >
+    <table>
+      <tr>
+        <td><b>Nama</b></td>
+        <td>:</td>
+        <td>ACHMAD ZAINUL ARIF</td>
+      </tr>
+
+      <tr>
+        <td><b>No. Absen</b></td>
+        <td>:</td>
+        <td>02</td>
+      </tr>
+
+      <tr>
+        <td><b>Kelas</b></td>
+        <td>:</td>
+        <td>X RPL 1</td>
+      </tr>
+    </table>
+
+    <form action="">
+      <table border="0" align="center" width="550"  style="border-radius: 2rem; border: 0.2rem solid salmon; padding-left: 1rem; padding-right: 1rem;">
+        <tr>
+          <td align="center">
+            <h2 style="">Form Input Biodata</h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <table >
+              <tr>
+                <td>Nama Lengkap</td>
+                <td>:</td>
+                <td>
+                  <input type="text" name="name" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tempat, Tanggal Lahir</td>
+                <td>:</td>
+                <td>
+                  <input type="text" size="15" />
+                  ,
+                  <input type="number" style="width: 2.5rem" />
+                  /
+                  <input type="number" style="width: 2.5rem" />
+                  /
+                  <input type="number" style="width: 4rem" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td><textarea rows="4" cols="40"></textarea></td>
+              </tr>
+
+              <tr>
+                <td>No. Telp/HP</td>
+                <td>:</td>
+                <td><input type="number" /></td>
+              </tr>
+
+              <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td>
+                  <input type="radio" name="gender" id="male" />
+                  <label for="male">Laki-Laki</label>
+                  <input type="radio" name="gender" id="female" />
+                  <label for="female">Perempuan</label>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Agama</td>
+                <td>:</td>
+                <td><input type="text" /></td>
+              </tr>
+
+              <tr>
+                <td>Hoby</td>
+                <td>:</td>
+                <td>
+                  <input type="checkbox" id="baca-buku" />
+                  <label for="baca-buku">Baca Buku</label>
+
+                  <input type="checkbox" id="olahraga" />
+                  <label for="olahraga">Olahraga</label>
+
+                  <input type="checkbox" id="main-game" />
+                  <label for="main-game">Main Game</label>
+
+                  <input type="checkbox" id="hiking" />
+                  <label for="hiking">Hiking</label>
+                </td>
+              </tr>
+
+              <tr>
+                <td></td>
+
+                <td colspan="2">
+                  <input type="submit" value="Submit" />
+                  <input type="reset" value="Clear!" />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
