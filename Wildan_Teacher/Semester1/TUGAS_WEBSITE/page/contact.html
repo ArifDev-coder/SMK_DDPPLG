@@ -3,122 +3,395 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>ArifDev</title>
 
     <style>
       * {
         margin: 0;
       }
+
+      a {
+        color: #d92323;
+      }
+
+      a:hover {
+        font-family: Persona-5-Menu;
+        color: #efefef;
+      }
+
+      .submit-button {
+        border-radius: 16px;
+        background-color: #efefef;
+        color: #0d0d0d;
+        transition: 0.2s ease-in-out;
+      }
+
+      .submit-button:hover {
+        scale: 110%;
+        border-radius: 5px;
+        background-color: #d92323;
+        color: #efefef;
+      }
+
+      .video-wrap {
+        position: relative;
+        width: 100%;
+      }
+
+      .lyrics {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        font-family: Persona-5-Menu;
+        text-align: center;
+      }
+
+      .lyrics::before {
+        content: "";
+        position: absolute;
+        inset: 25% 5%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 0, 0, 0.55) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        filter: blur(10px);
+      }
+
+      .lyric-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 6%;
+        margin: 0;
+        font-size: 1.85rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+        color: #efefef;
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+
+      .lyric-line.show {
+        animation:
+          lyricIn 0.9s ease forwards,
+          lyricGlow 3s 0.9s ease-in-out infinite;
+      }
+
+      @keyframes lyricIn {
+        from {
+          opacity: 0;
+          transform: translateY(-40%) scale(0.94);
+          filter: blur(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(-50%) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      .wave span {
+        display: inline-block;
+        animation: wave 2.5s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 0.08s);
+        background-color: #d92323;
+      }
+
+      @keyframes wave {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .bg {
+        height: 100vh;
+        background-image: url("../src/global/waw.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-family: Poppins;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      @font-face {
+        font-family: "Persona-5-Main";
+        src: url("../src/font/Persona5main.ttf") format("truetype");
+      }
+
+      @font-face {
+        font-family: "Persona-5-Expose";
+        src: url("../src/font/Expose-Regular.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Persona-5-Menu";
+        src: url("../src/font/Persona5MenuFontPrototype-Regular.ttf")
+          format(truetype);
+      }
     </style>
   </head>
   <body>
-    <table border="1" cellspacing="0" align="center" style="width: 100%">
-      <tr>
-        <td colspan="5">
-          <table style="width: 100%" cellpadding="10">
-            <tr>
-              <td style="width: 60%; font-size: 2rem"><b>My Website</b></td>
-              <td align="center"><a href="../index.html">Home</a></td>
-              <td align="center"><a href="./about.html">About</a></td>
-              <td align="center"><a href="./gallery.html">Gallery</a></td>
-              <td align="center"><a href="./contact.html">Contact</a></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+    <div class="bg">
+      <div class="container">
+        <table
+          border="1"
+          cellspacing="0"
+          align="center"
+          style="
+            width: 60%;
+            height: 600px;
+            background-color: #0d0d0d;
+            color: #efefef;
+            border-color: #d92323;
+            margin-top: 1.4rem;
+            margin-bottom: 2rem;
+          "
+        >
+          <tr>
+            <td colspan="5">
+              <table style="width: 100%" cellpadding="10">
+                <tr>
+                  <td
+                    style="
+                      width: 100%;
+                      font-size: 1.8rem;
+                      font-family: Persona-5-Main;
+                    "
+                  >
+                    <b>ArifDev</b>
+                  </td>
+                  <td align="center" style="font-family: Persona-5-Expose">
+                    <a href="../index.html">Home</a>
+                  </td>
+                  <td align="center" style="font-family: Persona-5-Expose">
+                    <a href="./about.html">About</a>
+                  </td>
+                  <td align="center" style="font-family: Persona-5-Expose">
+                    <a href="./gallery.html">Gallery</a>
+                  </td>
+                  <td align="center" style="font-family: Persona-5-Expose">
+                    <a href="./contact.html">Contact</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-      <tr>
-        <td>
-          <table cellpadding="10" style="width: 100%">
-            <tr>
-              <th colspan="4"><h2>Contact Us</h2></th>
-            </tr>
+          <tr>
+            <td>
+              <table cellpadding="10" style="width: 100%">
+                <tr>
+                  <th colspan="4">
+                    <h2 style="font-family: Persona-5-Menu">Contact Us</h2>
+                  </th>
+                </tr>
 
-            <tr>
-              <td>
-                <table>
-                  <tr>
-                    <td>
-                      <form>
-                        <table>
-                          <tr>
-                            <td><label for="name">Nama Lengkap</label></td>
-                            <td>:</td>
-                            <td><input type="text" id="name" /></td>
-                          </tr>
+                <tr>
+                  <td>
+                    <table style="width: 100%">
+                      <tr>
+                        <td valign="top">
+                          <form>
+                            <table style="width: 100%">
+                              <tr>
+                                <td>
+                                  <label for="name"><b>Nama Lengkap</b></label>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                  <input
+                                    type="text"
+                                    id="name"
+                                    style="width: 90%"
+                                  />
+                                </td>
+                              </tr>
 
-                          <tr>
-                            <td><label for="email">Email</label></td>
-                            <td>:</td>
-                            <td><input type="email" id="email" /></td>
-                          </tr>
+                              <tr>
+                                <td>
+                                  <label for="email"><b>Email</b></label>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                  <input
+                                    type="email"
+                                    id="email"
+                                    style="width: 90%"
+                                  />
+                                </td>
+                              </tr>
 
-                          <tr>
-                            <td>Jenis Kelamin</td>
-                            <td>:</td>
-                            <td>
-                              <input
-                                type="radio"
-                                id="male"
-                                name="gender"
-                              /><label for="male">Laki-Laki</label>
-                              <input
-                                type="radio"
-                                id="female"
-                                name="gender"
-                              /><label for="female">Perempuan</label>
-                            </td>
-                          </tr>
+                              <tr>
+                                <td><b>Jenis Kelamin</b></td>
+                                <td>:</td>
+                                <td style="font-size: 1rem">
+                                  <input
+                                    type="radio"
+                                    id="male"
+                                    name="gender"
+                                  /><label for="male"> Laki-Laki</label>
+                                  <input
+                                    type="radio"
+                                    id="female"
+                                    name="gender"
+                                  /><label for="female"> Perempuan</label>
+                                </td>
+                              </tr>
 
-                          <tr>
-                            <td>Kategori Pesan</td>
-                            <td>:</td>
-                            <td>
-                              <select name="category" id="category">
-                                <option value="Pilih Kategori">
-                                  Pilih Kategori
-                                </option>
+                              <tr>
+                                <td><b>Kategori Pesan</b></td>
+                                <td>:</td>
+                                <td>
+                                  <select
+                                    name="category"
+                                    id="category"
+                                    style="width: 90%"
+                                  >
+                                    <option value="Pilih Kategori">
+                                      Pilih Kategori
+                                    </option>
 
-                                <option value="yntkts">yntkts</option>
+                                    <option value="Butuh">Butuh</option>
 
-                                <option value="yntkts">yntkts</option>
-                              </select>
-                            </td>
-                          </tr>
+                                    <option value="Penting">Penting</option>
 
-                          <tr valign="top">
-                            <td><label for="msg">Pesan</label></td>
-                            <td>:</td>
-                            <td><textarea name="msg" id="msg"></textarea></td>
-                          </tr>
-                        </table>
-                      </form>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+                                    <option value="Ga Penting">
+                                      Ga Penting
+                                    </option>
 
-            <tr>
-              <td>
-                <table>
-                  <tr>
-                    <td><video src="nothing"></video></td>
-                  </tr>
+                                    <option value="Gabut">Gabut</option>
 
-                  <tr>
-                    <audio src="nothing"></audio>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+                                    <option value="Apa sih">Apa sih</option>
+                                  </select>
+                                </td>
+                              </tr>
 
-      <tr>
-        <td align="center">Copyright zarick©2026</td>
-      </tr>
-    </table>
+                              <tr valign="top">
+                                <td>
+                                  <label for="msg"><b>Pesan</b></label>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                  <textarea
+                                    name="msg"
+                                    id="msg"
+                                    style="width: 90%; height: 5rem"
+                                  ></textarea>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                  <input
+                                    type="submit"
+                                    style="
+                                      width: 5rem;
+                                      height: 1.8rem;
+                                      border: 0;
+                                      font-weight: bold;
+                                    "
+                                    class="submit-button"
+                                  />
+                                </td>
+                              </tr>
+                            </table>
+                          </form>
+                        </td>
+                        <td>
+                          <table
+                            style="
+                              border: 2px solid #d92323;
+                              padding: 1rem;
+                              border-radius: 1rem;
+                            "
+                          >
+                            <tr>
+                              <td style="width: 100px">
+                                <div class="video-wrap">
+                                  <video
+                                    src="../src/contact/404.mp4"
+                                    width="100%"
+                                    controls
+                                    autoplay
+                                    muted
+                                    loop
+                                    style="border-radius: 1.2rem"
+                                  ></video>
+                                  <div class="lyrics">
+                                    <p class="lyric-line" id="lyric"></p>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <marquee
+                                  style="
+                                    font-size: 1rem;
+                                    font-family: Poppins;
+                                    padding-top: 1rem;
+                                  "
+                                  class="wave"
+                                >
+                                  Playing Harvey Her's
+                                </marquee>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <audio
+                                  id="harvey"
+                                  src="../src/contact/Harvey.mp3"
+                                  controls
+                                  autoplay
+                                ></audio>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center">Made by ArifDev</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="../src/scripts/scripts.js"></script>
   </body>
 </html>
